@@ -365,4 +365,9 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 const nav=document.querySelector('nav');
 window.addEventListener('scroll',()=>{nav.style.padding=window.scrollY>60?'0.9rem 3.5rem':'1.4rem 3.5rem';});
 function lbOpen(el){const img=el.querySelector('img'),cap=el.querySelector('.gi-cap');document.getElementById('lb-img').src=img.src;document.getElementById('lb-cap').textContent=cap?cap.textContent:'';document.getElementById('lb').classList.add('on');document.body.style.overflow='hidden';}
-function lbClose(){document.getElementById('lb').clas
+function lbClose(){document.getElementById('lb').classsList.remove('on');document.body.style.overflow='';}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')lbClose();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lbClose();});
+</script>
+</body>
+</html>
